@@ -1,20 +1,15 @@
-x = kdata.CL ;  
-y = kdata.CD ;
-z = x ./ y ; 
+% kdata is the data file for Re: 50K
+% mdata is the data file for Re: 1M
 
-a = mdata.CL ;  
-b = mdata.CD ;
-c = a ./ b ; 
+m_k = kdata.CM ./ kdata.CL ; %xcp data for Re: 50K
+m_m = mdata.CM ./ mdata.CL ; %xcp data for Re: 1M
 
-m_k = kdata.CM ./ kdata.CL ; 
-m_m = mdata.CM ./ mdata.CL ;
-
-plot(kdata.alpha, kdata.CD)
+plot(kdata.alpha, m_k)
 hold on
-plot(mdata.alpha, mdata.CD)
+plot(mdata.alpha, m_m)
 xlabel('Alpha (°)')
-ylabel('CD')
-title("Line Plot of CD vs Alpha")
+ylabel('xcp')
+title("Line Plot of xcp vs Alpha")
 fontsize(16, "pixels")
 
 
